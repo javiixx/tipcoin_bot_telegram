@@ -6,6 +6,20 @@ from telegram import Update, ChatMember
 from telegram.ext import ApplicationBuilder, MessageHandler, ContextTypes, filters,  ChatMemberHandler
 from web3 import Web3
 from config import TELEGRAM_TOKEN
+from flask import Flask
+import threading
+
+app_flask = Flask('')
+
+@app_flask.route('/')
+def home():
+    return "Bot de TipCoin activo."
+
+def run_flask():
+    app_flask.run(host='0.0.0.0', port=8080)
+
+threading.Thread(target=run_flask).start()
+
 
 # ===========================
 # CONFIGURACIÓN
