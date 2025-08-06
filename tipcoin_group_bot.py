@@ -5,12 +5,12 @@ from dotenv import load_dotenv
 from telegram import Update, ChatMember
 from telegram.ext import ApplicationBuilder, MessageHandler, ContextTypes, filters,  ChatMemberHandler
 from web3 import Web3
+from config import TELEGRAM_TOKEN
 
 # ===========================
 # CONFIGURACIÓN
 # ===========================
-load_dotenv()
-TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+
 
 # RPC de BSC Testnet
 BSC_TESTNET_RPC = "https://data-seed-prebsc-1-s1.binance.org:8545/"
